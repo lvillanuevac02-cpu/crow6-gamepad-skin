@@ -1,0 +1,205 @@
+/*
+ CROW6 - Xbox One skin for Gamepad Viewer
+ Base artwork extracted from the user's supplied reference screenshot.
+ Upload this file and crow6-controller.png to the same GitHub Pages folder.
+*/
+:root {
+  --crow-yellow: #ffc400;
+  --crow-glow: rgba(255, 190, 0, .95);
+  --crow-dark: #080808;
+}
+
+/* Controller body */
+.edit.controller {
+  position: relative !important;
+  width: 935px !important;
+  height: 695px !important;
+  background: url("./crow6-controller.png") center center / 100% 100% no-repeat !important;
+  background-color: transparent !important;
+  overflow: visible !important;
+  filter: drop-shadow(0 0 9px rgba(255, 190, 0, .18));
+}
+
+/* Keep the artwork visible; replace only the invisible hit zones with live highlights. */
+.edit.disconnected {
+  background-image: url("./crow6-controller.png") !important;
+}
+.edit .button,
+.edit .face,
+.edit .stick,
+.edit .trigger,
+.edit .bumper,
+.edit .back,
+.edit .start,
+.edit .meta {
+  box-sizing: border-box !important;
+}
+
+/* ABXY: positions follow the Crow6 artwork */
+.edit .abxy {
+  position: absolute !important;
+  left: 486px !important;
+  top: 108px !important;
+  width: 170px !important;
+  height: 190px !important;
+}
+.edit .abxy .button {
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 196, 0, 0) !important;
+  border: 2px solid transparent !important;
+  box-shadow: none !important;
+}
+.edit .abxy .button.pressed {
+  background: rgba(255, 196, 0, .24) !important;
+  border: 2px solid var(--crow-yellow) !important;
+  box-shadow: 0 0 12px 5px var(--crow-glow), inset 0 0 12px rgba(255,196,0,.55) !important;
+  transform: scale(.94) !important;
+  margin: 0 !important;
+}
+.edit .abxy .a { left: 57px !important; top: 84px !important; }
+.edit .abxy .b { left: 103px !important; top: 12px !important; right: auto !important; }
+.edit .abxy .x { left: 11px !important; top: 12px !important; }
+.edit .abxy .y { left: 57px !important; top: -44px !important; }
+
+/* Analogue sticks */
+.edit .sticks {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 935px !important;
+  height: 695px !important;
+}
+.edit .stick {
+  position: absolute !important;
+  width: 94px !important;
+  height: 94px !important;
+  border-radius: 50% !important;
+  background: rgba(255,196,0,0) !important;
+  border: 3px solid transparent !important;
+  box-shadow: none !important;
+}
+.edit .stick.left { left: 164px !important; top: 152px !important; }
+.edit .stick.right { left: 453px !important; top: 344px !important; }
+.edit .stick.pressed {
+  background: rgba(255,196,0,.18) !important;
+  border-color: var(--crow-yellow) !important;
+  box-shadow: 0 0 15px 5px var(--crow-glow), inset 0 0 12px rgba(255,196,0,.5) !important;
+}
+
+/* D-pad */
+.edit .dpad {
+  position: absolute !important;
+  left: 247px !important;
+  top: 259px !important;
+  width: 112px !important;
+  height: 112px !important;
+}
+.edit .dpad .face {
+  position: absolute !important;
+  background: transparent !important;
+  border: 2px solid transparent !important;
+  border-radius: 9px !important;
+}
+.edit .dpad .face.up,
+.edit .dpad .face.down { width: 38px !important; height: 48px !important; }
+.edit .dpad .face.left,
+.edit .dpad .face.right { width: 48px !important; height: 38px !important; }
+.edit .dpad .face.up { left: 37px !important; top: 0 !important; }
+.edit .dpad .face.down { left: 37px !important; bottom: 0 !important; }
+.edit .dpad .face.left { left: 0 !important; top: 37px !important; }
+.edit .dpad .face.right { right: 0 !important; top: 37px !important; }
+.edit .dpad .face.pressed {
+  background: rgba(255,196,0,.34) !important;
+  border-color: var(--crow-yellow) !important;
+  box-shadow: 0 0 13px 4px var(--crow-glow) !important;
+}
+
+/* Menu / view / capture buttons */
+.edit .meta {
+  position: absolute !important;
+  left: 350px !important;
+  top: 120px !important;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+}
+.edit .meta.pressed {
+  background: rgba(255,196,0,.32) !important;
+  box-shadow: 0 0 15px 5px var(--crow-glow) !important;
+}
+.edit .arrows {
+  position: absolute !important;
+  left: 300px !important;
+  top: 178px !important;
+  width: 150px !important;
+  height: 90px !important;
+}
+.edit .back,
+.edit .start {
+  position: absolute !important;
+  width: 54px !important;
+  height: 54px !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  opacity: 0 !important;
+}
+.edit .back { left: 0 !important; top: 0 !important; }
+.edit .start { right: 0 !important; top: 0 !important; }
+.edit .back.pressed,
+.edit .start.pressed {
+  opacity: 1 !important;
+  background: rgba(255,196,0,.3) !important;
+  box-shadow: 0 0 13px 5px var(--crow-glow) !important;
+}
+
+/* Shoulder buttons and triggers. Their highlights appear when held. */
+.edit .bumpers {
+  position: absolute !important;
+  left: 110px !important;
+  top: 70px !important;
+  width: 715px !important;
+  height: 75px !important;
+}
+.edit .bumper {
+  width: 220px !important;
+  height: 70px !important;
+  background: transparent !important;
+  border: 2px solid transparent !important;
+  border-radius: 22px !important;
+  opacity: 0 !important;
+}
+.edit .bumper.pressed {
+  opacity: 1 !important;
+  background: rgba(255,196,0,.18) !important;
+  border-color: var(--crow-yellow) !important;
+  box-shadow: 0 0 14px 4px var(--crow-glow) !important;
+}
+.edit .triggers {
+  position: absolute !important;
+  left: 110px !important;
+  top: 0 !important;
+  width: 715px !important;
+  height: 90px !important;
+}
+.edit .trigger {
+  width: 220px !important;
+  height: 90px !important;
+  background: transparent !important;
+  opacity: 0 !important;
+  border-radius: 28px !important;
+}
+.edit .trigger.pressed {
+  opacity: 1 !important;
+  background: rgba(255,196,0,.20) !important;
+  box-shadow: 0 0 17px 5px var(--crow-glow) !important;
+}
+
+/* Never let the viewer's default art cover the custom Crow6 artwork. */
+.edit .button:not(.pressed),
+.edit .face:not(.pressed),
+.edit .stick:not(.pressed) {
+  background-image: none !important;
+}
